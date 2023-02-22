@@ -45,7 +45,11 @@ import sys
 import fnmatch
 import argparse
 import re
-from StringIO import StringIO
+# https://stackoverflow.com/questions/11914472/how-to-use-stringio-in-python3
+try:
+    from StringIO import StringIO ## for Python 2
+except ImportError:
+    from io import StringIO ## for Python 3
 try:
     import configparser as ConfigParser
 except ImportError:
